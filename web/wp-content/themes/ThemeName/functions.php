@@ -5,12 +5,8 @@ namespace AW\ThemeName;
  */
 defined('ABSPATH') or die('No direct access, please');
 
-if(!class_exists('Timber')){
-	\add_action('admin_notices', function(){
-		print("<div class='error'><h1>Please activate the Timber plugin</h1></div>");
-	});
-	return;
-}
+require_once(__DIR__.'/vendor/autoload.php');
+new \Timber\Timber();
 
 require_once('includes/Functions.php');
 $fn = new Functions();
